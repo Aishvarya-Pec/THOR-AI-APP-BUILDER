@@ -1,0 +1,135 @@
+:root {
+  --cm-backgroundColor: var(--thor-elements-editor-backgroundColor, var(--thor-elements-bg-depth-1));
+  --cm-textColor: var(--thor-elements-editor-textColor, var(--thor-elements-textPrimary));
+
+  /* Gutter */
+
+  --cm-gutter-backgroundColor: var(--thor-elements-editor-gutter-backgroundColor, var(--cm-backgroundColor));
+  --cm-gutter-textColor: var(--thor-elements-editor-gutter-textColor, var(--thor-elements-textSecondary));
+  --cm-gutter-activeLineTextColor: var(--thor-elements-editor-gutter-activeLineTextColor, var(--cm-gutter-textColor));
+
+  /* Fold Gutter */
+
+  --cm-foldGutter-textColor: var(--thor-elements-editor-foldGutter-textColor, var(--cm-gutter-textColor));
+  --cm-foldGutter-textColorHover: var(--thor-elements-editor-foldGutter-textColorHover, var(--cm-gutter-textColor));
+
+  /* Active Line */
+
+  --cm-activeLineBackgroundColor: var(--thor-elements-editor-activeLineBackgroundColor, rgb(224 231 235 / 30%));
+
+  /* Cursor */
+
+  --cm-cursor-width: 2px;
+  --cm-cursor-backgroundColor: var(--thor-elements-editor-cursorColor, var(--thor-elements-textSecondary));
+
+  /* Matching Brackets */
+
+  --cm-matching-bracket: var(--thor-elements-editor-matchingBracketBackgroundColor, rgb(50 140 130 / 0.3));
+
+  /* Selection */
+
+  --cm-selection-backgroundColorFocused: var(--thor-elements-editor-selection-backgroundColor, #42b4ff);
+  --cm-selection-backgroundOpacityFocused: var(--thor-elements-editor-selection-backgroundOpacity, 0.3);
+  --cm-selection-backgroundColorBlured: var(--thor-elements-editor-selection-inactiveBackgroundColor, #c9e9ff);
+  --cm-selection-backgroundOpacityBlured: var(--thor-elements-editor-selection-inactiveBackgroundOpacity, 0.3);
+
+  /* Panels */
+
+  --cm-panels-borderColor: var(--thor-elements-editor-panels-borderColor, var(--thor-elements-borderColor));
+
+  /* Search */
+
+  --cm-search-backgroundColor: var(--thor-elements-editor-search-backgroundColor, var(--cm-backgroundColor));
+  --cm-search-textColor: var(--thor-elements-editor-search-textColor, var(--thor-elements-textSecondary));
+  --cm-search-closeButton-backgroundColor: var(--thor-elements-editor-search-closeButton-backgroundColor, transparent);
+
+  --cm-search-closeButton-backgroundColorHover: var(
+    --thor-elements-editor-search-closeButton-backgroundColorHover,
+    var(--thor-elements-item-backgroundActive)
+  );
+
+  --cm-search-closeButton-textColor: var(
+    --thor-elements-editor-search-closeButton-textColor,
+    var(--thor-elements-item-contentDefault)
+  );
+
+  --cm-search-closeButton-textColorHover: var(
+    --thor-elements-editor-search-closeButton-textColorHover,
+    var(--thor-elements-item-contentActive)
+  );
+
+  --cm-search-button-backgroundColor: var(
+    --thor-elements-editor-search-button-backgroundColor,
+    var(--thor-elements-item-backgroundDefault)
+  );
+
+  --cm-search-button-backgroundColorHover: var(
+    --thor-elements-editor-search-button-backgroundColorHover,
+    var(--thor-elements-item-backgroundActive)
+  );
+
+  --cm-search-button-textColor: var(--thor-elements-editor-search-button-textColor, var(--thor-elements-textSecondary));
+
+  --cm-search-button-textColorHover: var(
+    --thor-elements-editor-search-button-textColorHover,
+    var(--thor-elements-textPrimary)
+  );
+
+  --cm-search-button-borderColor: var(--thor-elements-editor-search-button-borderColor, transparent);
+  --cm-search-button-borderColorHover: var(--thor-elements-editor-search-button-borderColorHover, transparent);
+
+  --cm-search-button-borderColorFocused: var(
+    --thor-elements-editor-search-button-borderColorFocused,
+    var(--thor-elements-borderColorActive)
+  );
+
+  --cm-search-input-backgroundColor: var(--thor-elements-editor-search-input-backgroundColor, transparent);
+  --cm-search-input-textColor: var(--thor-elements-editor-search-input-textColor, var(--thor-elements-textPrimary));
+  --cm-search-input-borderColor: var(--thor-elements-editor-search-input-borderColor, var(--thor-elements-borderColor));
+
+  --cm-search-input-borderColorFocused: var(
+    --thor-elements-editor-search-input-borderColorFocused,
+    var(--thor-elements-borderColorActive)
+  );
+
+  /* Tooltip */
+
+  --cm-tooltip-backgroundColor: var(--thor-elements-editor-tooltip-backgroundColor, var(--cm-backgroundColor));
+  --cm-tooltip-textColor: var(--thor-elements-editor-tooltip-textColor, var(--thor-elements-textPrimary));
+
+  --cm-tooltip-backgroundColorSelected: var(
+    --thor-elements-editor-tooltip-backgroundColorSelected,
+    theme('colors.alpha.accent.30')
+  );
+
+  --cm-tooltip-textColorSelected: var(
+    --thor-elements-editor-tooltip-textColorSelected,
+    var(--thor-elements-textPrimary)
+  );
+
+  --cm-tooltip-borderColor: var(--thor-elements-editor-tooltip-borderColor, var(--thor-elements-borderColor));
+
+  --cm-searchMatch-backgroundColor: var(--thor-elements-editor-searchMatch-backgroundColor, rgba(234, 92, 0, 0.33));
+}
+
+html[data-theme='light'] {
+  --thor-elements-editor-gutter-textColor: #237893;
+  --thor-elements-editor-gutter-activeLineTextColor: var(--thor-elements-textPrimary);
+  --thor-elements-editor-foldGutter-textColorHover: var(--thor-elements-textPrimary);
+  --thor-elements-editor-activeLineBackgroundColor: rgb(50 53 63 / 5%);
+  --thor-elements-editor-tooltip-backgroundColorSelected: theme('colors.alpha.accent.20');
+  --thor-elements-editor-search-button-backgroundColor: theme('colors.gray.100');
+  --thor-elements-editor-search-button-backgroundColorHover: theme('colors.alpha.gray.10');
+}
+
+html[data-theme='dark'] {
+  --cm-backgroundColor: var(--thor-elements-bg-depth-2);
+  --thor-elements-editor-gutter-textColor: var(--thor-elements-textTertiary);
+  --thor-elements-editor-gutter-activeLineTextColor: var(--thor-elements-textSecondary);
+  --thor-elements-editor-selection-inactiveBackgroundOpacity: 0.3;
+  --thor-elements-editor-activeLineBackgroundColor: rgb(50 53 63 / 50%);
+  --thor-elements-editor-foldGutter-textColorHover: var(--thor-elements-textPrimary);
+  --thor-elements-editor-matchingBracketBackgroundColor: rgba(66, 180, 255, 0.3);
+  --thor-elements-editor-search-button-backgroundColor: theme('colors.gray.800');
+  --thor-elements-editor-search-button-backgroundColorHover: theme('colors.alpha.white.10');
+}

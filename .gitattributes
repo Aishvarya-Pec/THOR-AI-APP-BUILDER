@@ -1,0 +1,4 @@
+*.node filter=lfs diff=lfs merge=lfs -text
+*.pack filter=lfs diff=lfs merge=lfs -text
+*.node !text !filter !merge !diff
+*.pack !text !filter !merge !diff

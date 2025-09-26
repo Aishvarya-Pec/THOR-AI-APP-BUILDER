@@ -1,0 +1,9 @@
+.actions .shiki {
+  background-color: var(--thor-elements-actions-code-background) !important;
+}
+
+.shiki {
+  &:not(:has(.actions), .actions *) {
+    background-color: var(--thor-elements-messages-code-background) !important;
+  }
+}

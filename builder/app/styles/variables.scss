@@ -1,0 +1,251 @@
+/* Color Tokens Light Theme */
+:root,
+:root[data-theme='light'] {
+  --thor-elements-borderColor: #e5e7eb;
+  --thor-elements-borderColorActive: #d1d5db;
+
+  --thor-elements-bg-depth-1: #ffffff;
+  --thor-elements-bg-depth-2: #f9fafb;
+  --thor-elements-bg-depth-3: #f3f4f6;
+  --thor-elements-bg-depth-4: #e5e7eb;
+
+  --thor-elements-textPrimary: #1e293b;
+  --thor-elements-textSecondary: #475569;
+  --thor-elements-textTertiary: #64748b;
+
+  --thor-elements-code-background: theme('colors.gray.100');
+  --thor-elements-code-text: theme('colors.gray.950');
+
+  --thor-elements-button-primary-background: #475569;
+  --thor-elements-button-primary-backgroundHover: #334155;
+  --thor-elements-button-primary-text: #ffffff;
+
+  --thor-elements-button-secondary-background: rgba(100, 116, 139, 0.1);
+  --thor-elements-button-secondary-backgroundHover: rgba(100, 116, 139, 0.15);
+  --thor-elements-button-secondary-text: #475569;
+
+  --thor-elements-button-danger-background: theme('colors.alpha.red.10');
+  --thor-elements-button-danger-backgroundHover: theme('colors.alpha.red.20');
+  --thor-elements-button-danger-text: theme('colors.red.500');
+
+  --thor-elements-item-contentDefault: theme('colors.alpha.gray.50');
+  --thor-elements-item-contentActive: theme('colors.gray.950');
+  --thor-elements-item-contentAccent: theme('colors.accent.700');
+  --thor-elements-item-contentDanger: theme('colors.red.500');
+  --thor-elements-item-backgroundDefault: rgba(0, 0, 0, 0);
+  --thor-elements-item-backgroundActive: theme('colors.alpha.gray.5');
+  --thor-elements-item-backgroundAccent: theme('colors.alpha.accent.10');
+  --thor-elements-item-backgroundDanger: theme('colors.alpha.red.10');
+
+  --thor-elements-loader-background: theme('colors.alpha.gray.10');
+  --thor-elements-loader-progress: theme('colors.accent.500');
+
+  --thor-elements-artifacts-background: theme('colors.white');
+  --thor-elements-artifacts-backgroundHover: theme('colors.alpha.gray.2');
+  --thor-elements-artifacts-borderColor: var(--thor-elements-borderColor);
+  --thor-elements-artifacts-inlineCode-background: theme('colors.gray.100');
+  --thor-elements-artifacts-inlineCode-text: var(--thor-elements-textPrimary);
+
+  --thor-elements-actions-background: theme('colors.white');
+  --thor-elements-actions-code-background: theme('colors.gray.800');
+
+  --thor-elements-messages-background: theme('colors.gray.100');
+  --thor-elements-messages-linkColor: theme('colors.accent.500');
+  --thor-elements-messages-code-background: theme('colors.gray.800');
+  --thor-elements-messages-inlineCode-background: theme('colors.gray.200');
+  --thor-elements-messages-inlineCode-text: theme('colors.gray.800');
+
+  --thor-elements-icon-success: theme('colors.green.500');
+  --thor-elements-icon-error: theme('colors.red.500');
+  --thor-elements-icon-primary: theme('colors.gray.950');
+  --thor-elements-icon-secondary: theme('colors.gray.600');
+  --thor-elements-icon-tertiary: theme('colors.gray.500');
+
+  --thor-elements-dividerColor: theme('colors.gray.100');
+
+  --thor-elements-prompt-background: theme('colors.alpha.white.80');
+
+  --thor-elements-sidebar-dropdownShadow: theme('colors.alpha.gray.10');
+  --thor-elements-sidebar-buttonBackgroundDefault: theme('colors.alpha.accent.10');
+  --thor-elements-sidebar-buttonBackgroundHover: theme('colors.alpha.accent.20');
+  --thor-elements-sidebar-buttonText: theme('colors.accent.700');
+
+  --thor-elements-preview-addressBar-background: theme('colors.gray.100');
+  --thor-elements-preview-addressBar-backgroundHover: theme('colors.alpha.gray.5');
+  --thor-elements-preview-addressBar-backgroundActive: theme('colors.white');
+  --thor-elements-preview-addressBar-text: var(--thor-elements-textSecondary);
+  --thor-elements-preview-addressBar-textActive: var(--thor-elements-textPrimary);
+
+  --thor-elements-terminals-background: theme('colors.white');
+  --thor-elements-terminals-buttonBackground: var(--thor-elements-bg-depth-4);
+
+  --thor-elements-cta-background: theme('colors.gray.100');
+  --thor-elements-cta-text: theme('colors.gray.950');
+
+  /* Terminal Colors */
+  --thor-terminal-background: var(--thor-elements-terminals-background);
+  --thor-terminal-foreground: #333333;
+  --thor-terminal-selection-background: #00000040;
+  --thor-terminal-black: #000000;
+  --thor-terminal-red: #cd3131;
+  --thor-terminal-green: #00bc00;
+  --thor-terminal-yellow: #949800;
+  --thor-terminal-blue: #0451a5;
+  --thor-terminal-magenta: #bc05bc;
+  --thor-terminal-cyan: #0598bc;
+  --thor-terminal-white: #555555;
+  --thor-terminal-brightBlack: #686868;
+  --thor-terminal-brightRed: #cd3131;
+  --thor-terminal-brightGreen: #00bc00;
+  --thor-terminal-brightYellow: #949800;
+  --thor-terminal-brightBlue: #0451a5;
+  --thor-terminal-brightMagenta: #bc05bc;
+  --thor-terminal-brightCyan: #0598bc;
+  --thor-terminal-brightWhite: #a5a5a5;
+}
+
+/* Color Tokens Dark Theme */
+:root,
+:root[data-theme='dark'] {
+  --thor-elements-borderColor: rgba(148, 163, 184, 0.2);
+  --thor-elements-borderColorActive: #94a3b8;
+
+  --thor-elements-bg-depth-1: #0f172a;
+  --thor-elements-bg-depth-2: #1e293b;
+  --thor-elements-bg-depth-3: #334155;
+  --thor-elements-bg-depth-4: rgba(148, 163, 184, 0.05);
+
+  --thor-elements-textPrimary: #f8fafc;
+  --thor-elements-textSecondary: #cbd5e1;
+  --thor-elements-textTertiary: #94a3b8;
+
+  --thor-elements-code-background: theme('colors.gray.800');
+  --thor-elements-code-text: theme('colors.white');
+
+  --thor-elements-button-primary-background: #475569;
+  --thor-elements-button-primary-backgroundHover: #64748b;
+  --thor-elements-button-primary-text: #ffffff;
+
+  --thor-elements-button-secondary-background: rgba(148, 163, 184, 0.1);
+  --thor-elements-button-secondary-backgroundHover: rgba(148, 163, 184, 0.15);
+  --thor-elements-button-secondary-text: #94a3b8;
+
+  --thor-elements-button-danger-background: theme('colors.alpha.red.10');
+  --thor-elements-button-danger-backgroundHover: theme('colors.alpha.red.20');
+  --thor-elements-button-danger-text: theme('colors.red.500');
+
+  --thor-elements-item-contentDefault: theme('colors.alpha.white.50');
+  --thor-elements-item-contentActive: theme('colors.white');
+  --thor-elements-item-contentAccent: theme('colors.accent.500');
+  --thor-elements-item-contentDanger: theme('colors.red.500');
+  --thor-elements-item-backgroundDefault: rgba(255, 255, 255, 0);
+  --thor-elements-item-backgroundActive: theme('colors.alpha.white.10');
+  --thor-elements-item-backgroundAccent: theme('colors.alpha.accent.10');
+  --thor-elements-item-backgroundDanger: theme('colors.alpha.red.10');
+
+  --thor-elements-loader-background: theme('colors.alpha.gray.10');
+  --thor-elements-loader-progress: theme('colors.accent.500');
+
+  --thor-elements-artifacts-background: theme('colors.gray.900');
+  --thor-elements-artifacts-backgroundHover: theme('colors.alpha.white.5');
+  --thor-elements-artifacts-borderColor: var(--thor-elements-borderColor);
+  --thor-elements-artifacts-inlineCode-background: theme('colors.gray.800');
+  --thor-elements-artifacts-inlineCode-text: theme('colors.white');
+
+  --thor-elements-actions-background: theme('colors.gray.900');
+  --thor-elements-actions-code-background: theme('colors.gray.800');
+
+  --thor-elements-messages-background: theme('colors.gray.800');
+  --thor-elements-messages-linkColor: theme('colors.accent.500');
+  --thor-elements-messages-code-background: theme('colors.gray.900');
+  --thor-elements-messages-inlineCode-background: theme('colors.gray.700');
+  --thor-elements-messages-inlineCode-text: var(--thor-elements-textPrimary);
+
+  --thor-elements-icon-success: theme('colors.green.400');
+  --thor-elements-icon-error: theme('colors.red.400');
+  --thor-elements-icon-primary: theme('colors.gray.950');
+  --thor-elements-icon-secondary: theme('colors.gray.600');
+  --thor-elements-icon-tertiary: theme('colors.gray.500');
+
+  --thor-elements-dividerColor: theme('colors.gray.100');
+
+  --thor-elements-prompt-background: theme('colors.alpha.gray.80');
+
+  --thor-elements-sidebar-dropdownShadow: theme('colors.alpha.gray.30');
+  --thor-elements-sidebar-buttonBackgroundDefault: theme('colors.alpha.accent.10');
+  --thor-elements-sidebar-buttonBackgroundHover: theme('colors.alpha.accent.20');
+  --thor-elements-sidebar-buttonText: theme('colors.accent.500');
+
+  --thor-elements-preview-addressBar-background: var(--thor-elements-bg-depth-1);
+  --thor-elements-preview-addressBar-backgroundHover: theme('colors.alpha.white.5');
+  --thor-elements-preview-addressBar-backgroundActive: var(--thor-elements-bg-depth-1);
+  --thor-elements-preview-addressBar-text: var(--thor-elements-textSecondary);
+  --thor-elements-preview-addressBar-textActive: var(--thor-elements-textPrimary);
+
+  --thor-elements-terminals-background: var(--thor-elements-bg-depth-1);
+  --thor-elements-terminals-buttonBackground: var(--thor-elements-bg-depth-3);
+
+  --thor-elements-cta-background: theme('colors.alpha.white.10');
+  --thor-elements-cta-text: theme('colors.white');
+
+  /* Terminal Colors */
+  --thor-terminal-background: var(--thor-elements-terminals-background);
+  --thor-terminal-foreground: #eff0eb;
+  --thor-terminal-selection-background: #97979b33;
+  --thor-terminal-black: #000000;
+  --thor-terminal-red: #ff5c57;
+  --thor-terminal-green: #5af78e;
+  --thor-terminal-yellow: #f3f99d;
+  --thor-terminal-blue: #57c7ff;
+  --thor-terminal-magenta: #ff6ac1;
+  --thor-terminal-cyan: #9aedfe;
+  --thor-terminal-white: #f1f1f0;
+  --thor-terminal-brightBlack: #686868;
+  --thor-terminal-brightRed: #ff5c57;
+  --thor-terminal-brightGreen: #5af78e;
+  --thor-terminal-brightYellow: #f3f99d;
+  --thor-terminal-brightBlue: #57c7ff;
+  --thor-terminal-brightMagenta: #ff6ac1;
+  --thor-terminal-brightCyan: #9aedfe;
+  --thor-terminal-brightWhite: #f1f1f0;
+}
+
+/*
+ * Element Tokens
+ *
+ * Hierarchy: Element Token -> (Element Token | Color Tokens) -> Primitives
+ */
+:root {
+  --header-height: 54px;
+  --chat-max-width: 37rem;
+  --chat-min-width: 640px;
+  --workbench-width: min(calc(100% - var(--chat-min-width)), 1536px);
+  --workbench-inner-width: var(--workbench-width);
+  --workbench-left: calc(100% - var(--workbench-width));
+
+  /* Toasts */
+  --toastify-color-progress-success: var(--thor-elements-icon-success);
+  --toastify-color-progress-error: var(--thor-elements-icon-error);
+
+  /* Terminal */
+  --thor-elements-terminal-backgroundColor: var(--thor-terminal-background);
+  --thor-elements-terminal-textColor: var(--thor-terminal-foreground);
+  --thor-elements-terminal-cursorColor: var(--thor-terminal-foreground);
+  --thor-elements-terminal-selection-backgroundColor: var(--thor-terminal-selection-background);
+  --thor-elements-terminal-color-black: var(--thor-terminal-black);
+  --thor-elements-terminal-color-red: var(--thor-terminal-red);
+  --thor-elements-terminal-color-green: var(--thor-terminal-green);
+  --thor-elements-terminal-color-yellow: var(--thor-terminal-yellow);
+  --thor-elements-terminal-color-blue: var(--thor-terminal-blue);
+  --thor-elements-terminal-color-magenta: var(--thor-terminal-magenta);
+  --thor-elements-terminal-color-cyan: var(--thor-terminal-cyan);
+  --thor-elements-terminal-color-white: var(--thor-terminal-white);
+  --thor-elements-terminal-color-brightBlack: var(--thor-terminal-brightBlack);
+  --thor-elements-terminal-color-brightRed: var(--thor-terminal-brightRed);
+  --thor-elements-terminal-color-brightGreen: var(--thor-terminal-brightGreen);
+  --thor-elements-terminal-color-brightYellow: var(--thor-terminal-brightYellow);
+  --thor-elements-terminal-color-brightBlue: var(--thor-terminal-brightBlue);
+  --thor-elements-terminal-color-brightMagenta: var(--thor-terminal-brightMagenta);
+  --thor-elements-terminal-color-brightCyan: var(--thor-terminal-brightCyan);
+  --thor-elements-terminal-color-brightWhite: var(--thor-terminal-brightWhite);
+}
