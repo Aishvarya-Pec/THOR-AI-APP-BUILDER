@@ -13,14 +13,6 @@ import { useState } from 'react';
 
 import styles from './BaseChat.module.scss';
 
-const EXAMPLE_PROMPTS = [
-  { text: 'Forge an Asgardian task manager with divine animations and Mjolnir-powered sorting ⚡' },
-  { text: 'Summon a Norse mythology quiz app with thunder effects and Valhalla leaderboards 🌩️' },
-  { text: 'Create a storm-tracking dashboard with real-time lightning data and Thor\'s weather insights ⛈️' },
-  { text: 'Build a godly code editor with rainbow bridge syntax highlighting and Odin\'s wisdom 🌈' },
-  { text: 'Craft a Viking marketplace with runic search and Bifrost payment gateway 🗲' },
-  { text: 'Design a mythical creature encyclopedia with interactive 3D models and ancient lore 🐉' },
-];
 
 const ModelSelector = ({ model, setModel }) => {
   const [provider, setProvider] = useState(DEFAULT_PROVIDER);
@@ -245,53 +237,6 @@ export const BaseChat = React.forwardRef<HTMLDivElement, BaseChatProps>(
                 <div className="bg-transparent pb-6">{/* Ghost Element */}</div>
               </div>
             </div>
-            {!chatStarted && (
-              <div id="examples" className="relative w-full max-w-4xl mx-auto mt-8 mb-8 flex justify-center">
-                <div className="w-full">
-                  {/* Section title */}
-                  <div className="text-center mb-8">
-                    <h2 className="text-2xl font-semibold mb-4 bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text text-transparent">
-                    Divine Inspirations
-                  </h2>
-                    <p className="text-thor-elements-textSecondary">Choose your legendary quest or forge your own path</p>
-                  </div>
-                  
-                  {/* Examples grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 [mask-image:linear-gradient(to_bottom,black_0%,transparent_180%)] hover:[mask-image:none]">
-                    {EXAMPLE_PROMPTS.map((examplePrompt, index) => {
-                      return (
-                        <button
-                          key={index}
-                          onClick={(event) => {
-                            sendMessage?.(event, examplePrompt.text);
-                          }}
-                          className="group relative p-4 rounded-lg border border-thor-elements-borderColor bg-thor-elements-background-depth-1/50 hover:bg-thor-elements-background-depth-2/70 text-left transition-all duration-300 hover:scale-105 hover:shadow-lg hover:border-blue-400/50"
-                        >
-                          {/* Lightning effect on hover */}
-                          <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                          
-                          <div className="relative flex items-center justify-between">
-                            <span className="text-thor-elements-textSecondary group-hover:text-thor-elements-textPrimary transition-colors duration-300 font-medium">
-                              {examplePrompt.text}
-                            </span>
-                            <div className="ml-3 text-blue-400 opacity-60 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300">
-                              ⚡
-                            </div>
-                          </div>
-                        </button>
-                      );
-                    })}
-                  </div>
-                  
-                  {/* Bottom decorative element */}
-                  <div className="text-center mt-8 opacity-40">
-                    <div className="text-sm text-thor-elements-textTertiary">
-                      Or speak your command and watch the magic unfold
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
           <ClientOnly>{() => <Workbench chatStarted={chatStarted} isStreaming={isStreaming} />}</ClientOnly>
         </div>
