@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #messages { border: 1px solid #ccc; height: 300px; overflow-y: auto; padding: 10px; margin-bottom: 10px; }
+        #input { width: 300px; padding: 5px; }
+        button { padding: 5px 10px; margin-left: 5px; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 4px; }
+        .success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    </style>
+</head>
+<body>
+    <h1>Chat Test Page</h1>
+    <p><strong>Instructions:</strong> Type a message and click Send to test the chat API. This page tests the chat functionality directly without the main app interface.</p>
+    <p><strong>Browser Cache:</strong> If you're seeing errors, try hard refresh: Ctrl+F5 (Windows/Linux) or Cmd+Shift+R (Mac)</p>
+    <p><strong>Alternative:</strong> If the main app still doesn't work, the issue might be with the React components. Try this test page first to verify the API works.</p>
+    <p><strong>Current Status:</strong> API is now returning simple JSON responses (not streaming) for better compatibility.</p>
+
+    <div style="margin: 10px 0;">
+        <button onclick="testConnection()">Test API Connection</button>
+        <button onclick="testMainApp()" style="margin-left: 10px;">Test Main App</button>
+    </div>
+
+    <div id="status"></div>
+    <div id="messages"></div>
+    <input type="text" id="input" placeholder="Type a message..." />
+    <button onclick="sendMessage()">Send</button>
+    <button onclick="clearMessages()">Clear</button>
+
+    <script>
+        function showStatus(message, type = 'info') {
+            const status = document.getElementById('status');
+            status.innerHTML = `<div class="status ${type}">${message}</div>`;
+            setTimeout(() => {
+                status.innerHTML = '';
+            }, 5000);
+        }
+
+        function clearMessages() {
+            document.getElementById('messages').innerHTML = '';
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('input');
+            const messages = document.getElementById('messages');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            showStatus('Sending message...', 'info');
+
+            // Add user message
+            messages.innerHTML += `<div><strong>You:</strong> ${message}</div>`;
+            const startTime = Date.now();
+
+            try {
+                showStatus('Connecting to API...', 'info');
+
+                // Use the same localhost URL as the main app
+                showStatus('Testing API connection...', 'info');
+                const response = await fetch('http://localhost:5173/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        messages: [{ role: 'user', content: message }]
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+
+                showStatus('Receiving response...', 'success');
+
+                // Handle JSON response (not streaming)
+                const data = await response.json();
+                messages.innerHTML += `<div><strong>Assistant:</strong> ${data.content}</div>`;
+
+                const duration = ((Date.now() - startTime) / 1000).toFixed(1);
+                showStatus(`Response received in ${duration}s`, 'success');
+                console.log('Response data:', data);
+            } catch (error) {
+                showStatus(`Error: ${error.message}`, 'error');
+                messages.innerHTML += `<div><strong>Error:</strong> ${error.message}</div>`;
+                console.error('Chat error:', error);
+            }
+
+            input.value = '';
+        }
+
+        // Allow Enter key to send message
+        document.getElementById('input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        async function testConnection() {
+            showStatus('Testing basic API connection...', 'info');
+
+            try {
+                const response = await fetch('http://localhost:5173/api/chat', {
+                    method: 'HEAD'
+                });
+
+                showStatus(`API Status: ${response.status} ${response.statusText}`, response.ok ? 'success' : 'error');
+                console.log('API Test Response:', response);
+            } catch (error) {
+                showStatus(`Connection Error: ${error.message}`, 'error');
+                console.error('API Connection Test Failed:', error);
+            }
+        }
+
+        async function testMainApp() {
+            showStatus('Testing main app API call...', 'info');
+
+            try {
+                // Simulate the exact request the main app would make
+                const response = await fetch('http://localhost:5173/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        messages: [{ role: 'user', content: 'test' }]
+                    })
+                });
+
+                showStatus(`Main App Test: ${response.status} ${response.statusText}`, response.ok ? 'success' : 'error');
+
+                if (response.ok) {
+                    const text = await response.text();
+                    console.log('Response text:', text);
+                    showStatus('Response received successfully!', 'success');
+                } else {
+                    const errorText = await response.text();
+                    console.error('Error response:', errorText);
+                    showStatus(`Error response: ${errorText}`, 'error');
+                }
+            } catch (error) {
+                showStatus(`Main App Test Error: ${error.message}`, 'error');
+                console.error('Main App Test Failed:', error);
+            }
+        }
+
+        // Auto-focus input on page load
+        window.addEventListener('load', function() {
+            document.getElementById('input').focus();
+        });
+    </script>
+</body>
+</html>

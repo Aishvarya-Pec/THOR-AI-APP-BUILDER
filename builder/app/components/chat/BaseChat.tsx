@@ -6,10 +6,10 @@ import { ClientOnly } from 'remix-utils/client-only';
 import { IconButton } from '../../components/ui/IconButton';
 import { Workbench } from '../../components/workbench/Workbench.client';
 import { classNames } from '../../utils/classNames';
-import { MODEL_LIST, DEFAULT_PROVIDER, initializeModelList } from '../../utils/constants';
+import { MODEL_LIST, DEFAULT_PROVIDER } from '../../utils/constants';
 import { Messages } from './Messages.client';
 import { SendButton } from './SendButton.client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import styles from './BaseChat.module.scss';
 
@@ -24,17 +24,8 @@ const EXAMPLE_PROMPTS = [
 
 const ModelSelector = ({ model, setModel }) => {
   const [provider, setProvider] = useState(DEFAULT_PROVIDER);
-  const [modelList, setModelList] = useState(MODEL_LIST);
-  const [providerList, setProviderList] = useState([...new Set(MODEL_LIST.map((model) => model.provider))]);
-
-  useEffect(() => {
-    const loadModels = async () => {
-      await initializeModelList();
-      setModelList([...MODEL_LIST]);
-      setProviderList([...new Set(MODEL_LIST.map((model) => model.provider))]);
-    };
-    loadModels();
-  }, []);
+  const modelList = MODEL_LIST;
+  const providerList = [...new Set(MODEL_LIST.map((model) => model.provider))];
 
   return (
     <div className="mb-2">

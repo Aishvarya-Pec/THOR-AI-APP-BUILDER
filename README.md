@@ -78,11 +78,11 @@ npm run dev
 
 ## 🤖 AI Model Support
 
-### 🌐 OpenRouter Models (Recommended)
+### 🌐 OpenRouter Models (Primary)
 Access to premium AI models through OpenRouter:
-- **GPT-4** - Advanced reasoning and code generation
-- **Claude** - High-quality technical writing
-- **Gemini Pro** - Fast and efficient responses
+- **Grok 4 Fast** - Quick tasks and responses
+- **Gemini 2.0 Flash** - Landing pages and design
+- **DeepSeek V3** - Complex analysis and heavy tasks
 
 ### 🏠 Local Models (Optional)
 For private, offline development:
